@@ -51,6 +51,9 @@ plot(fobject)
 ## -----------------------------------------------------------------------------
 plot_density(fobject)
 
+## -----------------------------------------------------------------------------
+plot(metric_scores(fobject))
+
 ## ---- results= "hide"---------------------------------------------------------
 library(gbm)
 
@@ -67,9 +70,6 @@ rf_compas_3 <- ranger(Two_yr_Recidivism ~ Age_Above_FourtyFive+Misdemeanor,
                       data = compas,
                       probability = TRUE)
 
-rf_compas_4 <- ranger(Two_yr_Recidivism ~.,
-                      data = compas,
-                      probability = TRUE)
 df <- compas
 df$Two_yr_Recidivism <- as.numeric(compas$Two_yr_Recidivism)-1
 gbm_compas_1<- gbm(Two_yr_Recidivism~., data = df) 
@@ -79,13 +79,12 @@ explainer_2 <- explain(lr_compas_1,  data = compas[,-1], y = y_numeric)
 explainer_3 <- explain(rf_compas_2,  data = compas[,-1], y = y_numeric, label = "ranger_2")
 explainer_4 <- explain(rf_compas_3,  data = compas[,-1], y = y_numeric, label = "ranger_3")
 explainer_5 <- explain(gbm_compas_1, data = compas[,-1], y = y_numeric)
-explainer_6 <- explain(rf_compas_4,  data = compas[,-1], y = y_numeric, label = "ranger_4")
 
 
 ## -----------------------------------------------------------------------------
 fobject <- fairness_check(explainer_1, explainer_2,
                             explainer_3, explainer_4,
-                            explainer_5, explainer_6,
+                            explainer_5,
                             protected = compas$Ethnicity,
                             privileged = "Caucasian",
                             verbose = FALSE) 
@@ -106,7 +105,7 @@ sm <- stack_metrics(fobject)
 plot(sm)
 
 ## -----------------------------------------------------------------------------
-cm <- choose_metric(fobject)
+cm <- choose_metric(fobject, "TPR")
 plot(cm)
 
 ## -----------------------------------------------------------------------------
@@ -121,7 +120,7 @@ fheatmap <- fairness_heatmap(fobject)
 plot(fheatmap, text_size = 3)
 
 ## -----------------------------------------------------------------------------
-fap <- performance_and_fairness(fobject, fairness_metric = "FPR")
+fap <- performance_and_fairness(fobject, fairness_metric = "STP")
 plot(fap)
 
 ## -----------------------------------------------------------------------------
