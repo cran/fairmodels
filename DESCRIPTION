@@ -1,7 +1,7 @@
 Package: fairmodels
 Type: Package
 Title: Flexible Tool for Bias Detection, Visualization, and Mitigation
-Version: 0.2.2
+Version: 0.2.4
 Authors@R: 
     c(person("Jakub", "Wiśniewski", role = c("aut", "cre"),
              email = "jakwisn@gmail.com"),
@@ -20,9 +20,9 @@ URL: https://modeloriented.github.io/fairmodels/
 BugReports: https://github.com/ModelOriented/fairmodels/issues
 Language: en-US
 NeedsCompilation: no
-Packaged: 2020-09-21 14:40:20 UTC; jakwisn
+Packaged: 2020-12-12 18:50:17 UTC; jakwisn
 Author: Jakub Wiśniewski [aut, cre],
   Przemysław Biecek [aut] (<https://orcid.org/0000-0001-8423-1823>)
 Maintainer: Jakub Wiśniewski <jakwisn@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-09-21 16:20:04 UTC
+Date/Publication: 2020-12-12 19:30:03 UTC

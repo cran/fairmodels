@@ -3,7 +3,7 @@
 #' Make \code{fairness_radar} object with chosen \code{fairness_metrics}. Note that there must be at least three metrics that does not contain NA.
 #'
 #' @param x object of class \code{fairness_object}
-#' @param fairness_metrics character, vector of metric names, at least 3 metrics without NA needed. If \code{NULL} default metrics will be used, which are ones from \code{fairness_check} plot.
+#' @param fairness_metrics character, vector of metric names, at least 3 metrics without NA needed. Full names of metrics can be found in \code{fairness_check} documentation.
 #'
 #' @return \code{fairness_radar} object.
 #' It is a list containing:
@@ -44,7 +44,7 @@
 #' plot(fradar)
 
 
-fairness_radar <- function(x, fairness_metrics = fairness_check_metrics()){
+fairness_radar <- function(x, fairness_metrics = c('ACC', 'TPR', 'PPV', 'FPR', 'STP')){
 
   stopifnot(class(x) == "fairness_object")
 
@@ -62,16 +62,15 @@ fairness_radar <- function(x, fairness_metrics = fairness_check_metrics()){
   if (any(is.na(data))){
     na_col_index      <- apply(data, 2, function(x) any(is.na(x)))
     cols_with_missing <- names(data)[na_col_index]
-    warning("Found metric with NA: ", paste(cols_with_missing, collapse = ", "), ", ommiting it")
 
-
-    fairness_metrics <- fairness_metrics[! fairness_metrics %in% cols_with_missing]
+    cols_with_missing <- cols_with_missing[cols_with_missing %in% fairness_metrics]
+    if (length(cols_with_missing) > 0){
+      warning("Found metric with NA: ", paste(cols_with_missing, collapse = ", "), ", ommiting it")
+      fairness_metrics <- fairness_metrics[! fairness_metrics %in% cols_with_missing]
+    }
   }
 
-  expanded_data <- expand_fairness_object(x)
-
-  # taking only some metrics
-  expanded_data <- expanded_data[expanded_data$metric %in% fairness_metrics,]
+  expanded_data <- expand_fairness_object(x, fairness_metrics = fairness_metrics)
 
 
   if (length(unique(expanded_data$metric)) <= 2) stop("metric data must have at least 3 columns without NA")

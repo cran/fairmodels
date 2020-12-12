@@ -5,7 +5,7 @@
 #' denote the scores for privileged subgroup. It is best to use only few metrics (using \code{fairness_metrics} parameter)
 #'
 #' @param x object of class \code{fairness_object}
-#' @param fairness_metrics character, vector with fairness metric names. Default metrics are ones in \code{fairness_check} plot
+#' @param fairness_metrics character, vector with fairness metric names. Default metrics are ones in \code{fairness_check} plot, full names can be found in \code{fairness_check} documentation.
 #'
 #' @return \code{metric_scores} object.
 #' It is a list containing:
@@ -37,13 +37,13 @@
 #'                           protected = german$Sex,
 #'                           privileged = "male")
 #'
-#' ms <- metric_scores(fobject, fairness_metrics = c("TPR","STP","ACC"))
+#' ms <- metric_scores(fobject, fairness_metrics = c('ACC', 'TPR', 'PPV', 'FPR', 'STP'))
 #' plot(ms)
 #'
 
 
 
-metric_scores <- function(x, fairness_metrics = fairness_check_metrics()){
+metric_scores <- function(x, fairness_metrics = c('ACC', 'TPR', 'PPV', 'FPR', 'STP')){
   stopifnot(class(x) == "fairness_object")
 
   if (! is.character(fairness_metrics)) stop("fairness_metrics must be character vector")
@@ -52,7 +52,9 @@ metric_scores <- function(x, fairness_metrics = fairness_check_metrics()){
   data <- data.frame()
   for (model in names(x$groups_data)){
     model_data_frame <- data.frame()
-    model_data           <- lapply(x$groups_data[[model]], function(x) data.frame(score = x, subgroup = names(x)))
+    model_data       <- lapply(x$groups_data[[model]],
+                               function(x) data.frame(score = x,
+                                                      subgroup = names(x)))
     for (i in seq_along(model_data)){
       model_data[[i]]$metric <- names(model_data)[i]
       model_data_frame <- rbind(model_data_frame, model_data[[i]])

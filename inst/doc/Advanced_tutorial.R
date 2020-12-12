@@ -178,7 +178,7 @@ plot(ceteris_paribus_cutoff(fobject_test,
 ## -----------------------------------------------------------------------------
 fc <- fairness_check(gbm_explainer, fobject,
                      label = "gbm_cutoff",
-                     cutoff = list(Female = 0.35),
+                     cutoff = list(Female = 0.25),
                      verbose = FALSE)
 
 plot(fc)
