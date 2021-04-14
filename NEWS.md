@@ -1,3 +1,17 @@
+# fairmodels 1.0.1 
+* Changed examples - added parameter `num.threads = 1` to `ranger` and added *donttest{}* to examples with long computation time. 
+
+# fairmodels 1.0.0
+* Added citation information
+* Added additional reference in `fairness_check()` documentation.
+* Fixed links in DESCRIPTION and README. 
+
+# fairmodels 0.2.6 
+* Fixed bug which appeared when two fairness objects were passed to `fairness_check` without an explainer. (#36)
+
+# fairmodels 0.2.5
+* Extended documentation for `epsilon` parameter in `fairness_check()` function.
+
 # fairmodels 0.2.4
 * Deleted on-load information message about four-fifths rule. 
 * Fixed bug with `NA` warning in metrics that are not chosen. (#32)
