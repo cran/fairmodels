@@ -192,3 +192,33 @@ paf <- performance_and_fairness(fc, fairness_metric = "STP",
                                  performance_metric = "accuracy")
 plot(paf)
 
+## -----------------------------------------------------------------------------
+data("adult_test")
+
+adult_test$salary <- as.numeric(adult_test$salary) -1 
+protected_test <- adult_test$sex
+
+adult_test <- adult_test[colnames(adult_test) != "sex"]
+
+
+# on test
+gbm_explainer_test <- explain(gbm_model,
+                              data = adult_test[,-1],
+                              y = adult_test$salary,
+                              verbose = FALSE)
+
+# the objects are tested on different data, so we cannot compare them on one plot
+fobject_train <- fairness_check(gbm_explainer, 
+                                 protected = protected, 
+                                 privileged = "Male", 
+                                 verbose = FALSE)
+
+fobject_test  <- fairness_check(gbm_explainer_test, 
+                                 protected = protected_test, 
+                                 privileged = "Male", 
+                                 verbose = FALSE)
+
+library(patchwork) # with patchwork library we will nicely compare the plots
+
+plot(fobject_train) + plot(fobject_test) 
+
