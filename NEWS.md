@@ -1,3 +1,10 @@
+# fairmodels 1.2.1
+* changed link to *codecov* in `README.md`
+* changed `class(x) == 'fairness_regression_object` to `inherits(x, "fairness_regression_object")` in `plot_density.R` according to CRAN comments
+* changed CITATION file (added reference to the RJournal)
+* fix for https://github.com/ModelOriented/fairmodels/issues/49
+* fix for https://github.com/ModelOriented/fairmodels/issues/48
+
 # fairmodels 1.2.0
 * Added filtering metrics when plotting and printing of `fairness_object`. 
 * Added ability to add custom measure function to print method of `fairness_object` 

@@ -1,7 +1,7 @@
 Package: fairmodels
 Type: Package
 Title: Flexible Tool for Bias Detection, Visualization, and Mitigation
-Version: 1.2.0
+Version: 1.2.1
 Authors@R: 
     c(person("Jakub", "Wiśniewski", role = c("aut", "cre"),
              email = "jakwisn@gmail.com"),
@@ -21,9 +21,9 @@ URL: https://fairmodels.drwhy.ai/
 BugReports: https://github.com/ModelOriented/fairmodels/issues
 Language: en-US
 NeedsCompilation: no
-Packaged: 2021-10-08 10:55:03 UTC; jakwi
+Packaged: 2022-08-23 19:31:51 UTC; jakwi
 Author: Jakub Wiśniewski [aut, cre],
   Przemysław Biecek [aut] (<https://orcid.org/0000-0001-8423-1823>)
 Maintainer: Jakub Wiśniewski <jakwisn@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-10-08 11:20:02 UTC
+Date/Publication: 2022-08-23 19:50:06 UTC
