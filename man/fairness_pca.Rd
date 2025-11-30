@@ -14,13 +14,11 @@ fairness_pca(x, omit_models_with_NA = FALSE)
 \value{
 \code{fairness_pca} object
 It is list containing following fields:
-\itemize{
 \item{pc_1_2}{ - amount of data variance explained with each component}
 \item{rotation}{ - rotation from \code{stats::prcomp}}
 \item{x}{ - x from \code{stats::prcomp}}
 \item{sdev}{ - sdev from \code{stats::prcomp}}
 \item{label}{ - model labels}
-}
 }
 \description{
 Calculate PC for metric_matrix to see similarities between models and metrics. If \code{omit_models_with_NA} is set to \code{TRUE} models with NA will be omitted as opposed

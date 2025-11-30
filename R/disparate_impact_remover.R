@@ -7,7 +7,7 @@
 #'
 #' @details This is implementation of geometric method which preserves ranks unlike combinatorial repair. \code{lambda} close to 1 denotes that distributions will be very close to each other
 #' and \code{lambda} close to 0 means that densities will barely change. Note that although \code{lambda} equal 0 should mean that original data will be returned, it usually changes distributions slightly due to
-#' pigeonholing. The number of pigeonholes is fixed and equal to min{101, unique(a)}, where a is vector with values for subgroup. So if some subgroup is not numerous and
+#' pigeonholing. The number of pigeonholes is fixed and equal to min\{101, unique(a)\}, where a is vector with values for subgroup. So if some subgroup is not numerous and
 #' the distribution is discrete with small number of variables then there will be small number of pigeonholes. It will affect data significantly.
 #'
 #' @param data \code{data.frame}, data to be transformed

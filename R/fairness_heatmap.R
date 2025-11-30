@@ -5,17 +5,15 @@
 #' If NA's appear heatmap will still plot, but with gray area where NA's were.
 #'
 #' @param x object of class \code{fairness_object}
-#' @param scale logical, if code{TRUE} metrics will be scaled to mean 0 and sd 1. Default \code{FALSE}
+#' @param scale logical, if \code{TRUE} metrics will be scaled to mean 0 and sd 1. Default \code{FALSE}
 #'
 #' @return \code{fairness_heatmap} object.
 #'
 #' It is a list with following fields:
-#' \itemize{
 #' \item{heatmap_data}{ - \code{data.frame} with information about score for model and parity loss metric}
 #' \item{matrix_model}{ - matrix used in dendogram plots}
 #' \item{scale}{ - logical parameter passed to \code{fairness_heatmap}}
 #' \item{label}{ - character, vector of model labels}
-#' }
 #' @export
 #' @rdname fairness_heatmap
 #'

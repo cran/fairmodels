@@ -31,11 +31,9 @@ choose_metric(x, fairness_metric = "FPR")
 \value{
 \code{chosen_metric} object
 It is a list with following fields:
-\itemize{
 \item{parity_loss_metric_data}{ \code{data.frame} with columns: parity_loss_metric and label}
 \item{metric}{ chosen metric}
 \item{label}{ character, vector of model labels}
-}
 }
 \description{
 Extracts metrics from \code{metric_data} from fairness object.

@@ -16,12 +16,10 @@ performance_and_fairness(x, fairness_metric = NULL, performance_metric = NULL)
 \value{
 \code{performance_and_fairness} object.
 It is list containing:
-\itemize{
 \item{paf_data}{ - performance and fairness \code{data.frame} containing fairness and performance metric scores for each model}
 \item{fairness_metric}{ - chosen fairness metric name}
 \item{performance_metric}{ - chosen performance_metric name}
 \item{label}{ - model labels}
-}
 }
 \description{
 Measure performance in both fairness metric and

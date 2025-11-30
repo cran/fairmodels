@@ -16,12 +16,10 @@ confusion_matrix(probs, observed, cutoff)
 \value{
 object of class \code{confussion_matrix}
 It is a list with following fields:
-\itemize{
 \item{tp}{number of True Positives}
 \item{fp}{number of False Positives}
 \item{tn}{number of True Negatives}
 \item{fn}{number of False Negatives}
-}
 }
 \description{
 Calculates confusion matrix for given cutoff

@@ -7,10 +7,8 @@
 #'
 #' @return \code{fairness_radar} object.
 #' It is a list containing:
-#' \itemize{
 #' \item{radar_data}{ - \code{data.frame} containing scores for each model and parity loss metric}
 #' \item{label}{ - model labels}
-#' }
 #' @export
 #'
 #' @examples

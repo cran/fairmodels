@@ -40,31 +40,28 @@ pass protected and privileged parameters. Explainers must be binary classificati
 }
 \value{
 An object of class \code{fairness_object} which is a list with elements:
-\itemize{
-\item parity_loss_metric_data - data.frame containing parity loss for various fairness metrics. Created with following metrics:
-\itemize{
-
-\item{TPR}{ - True Positive Rate (Sensitivity, Recall)}
-\item{TNR}{ - True Negative Rate (Specificity)}
-\item{PPV}{ - Positive Predictive Value (Precision)}
-\item{NPV}{ - Negative Predictive Value}
-\item{FNR}{ - False Negative Rate}
-\item{FPR}{ - False Positive Rate}
-\item{FDR}{ - False Discovery Rate}
-\item{FOR}{ - False Omission Rate}
-\item{TS}{ - Threat Score}
-\item{STP}{ - Statistical Parity}
-\item{ACC}{ - Accuracy}
-\item{F1}{ - F1 Score}
+\item{parity_loss_metric_data}{A \code{data.frame} containing parity loss for various fairness metrics. The metrics include:
+  \itemize{
+    \item \strong{TPR}: True Positive Rate (Sensitivity, Recall)
+    \item \strong{TNR}: True Negative Rate (Specificity)
+    \item \strong{PPV}: Positive Predictive Value (Precision)
+    \item \strong{NPV}: Negative Predictive Value
+    \item \strong{FNR}: False Negative Rate
+    \item \strong{FPR}: False Positive Rate
+    \item \strong{FDR}: False Discovery Rate
+    \item \strong{FOR}: False Omission Rate
+    \item \strong{TS}: Threat Score
+    \item \strong{STP}: Statistical Parity
+    \item \strong{ACC}: Accuracy
+    \item \strong{F1}: F1 Score
+  }
 }
-
-\item{groups_data}{ - metrics across levels in protected variable}
-\item{groups_confusion_matrices}{ - confusion matrices for each subgroup}
-\item{explainers}{ - list of \code{DALEX} explainers used to create object}
-\item{cutoffs}{ - list of cutoffs for each explainer and subgroup}
-\item{fairness_check_data}{ - \code{data.frame} used for for plotting \code{fairness_object}}
-\item{...}{ - other parameters passed to function}
-}
+\item{groups_data}{Metrics across levels in the protected variable.}
+\item{groups_confusion_matrices}{Confusion matrices for each subgroup.}
+\item{explainers}{A list of \code{DALEX} explainers used to create the object.}
+\item{cutoffs}{A list of cutoffs for each explainer and subgroup.}
+\item{fairness_check_data}{A \code{data.frame} used for plotting the \code{fairness_object}.}
+\item{...}{Other parameters passed to the function.}
 }
 \description{
 Fairness check creates \code{fairness_object} which measures different fairness metrics and wraps data, explainers and parameters in useful object. This is fundamental object in this package.

@@ -18,27 +18,28 @@
 #' Fairness metrics (Full names explained in \code{fairness_check} documentation):
 #'
 #' \itemize{
-#' \item TPR
-#' \item TNR
-#' \item PPV
-#' \item NPV
-#' \item FNR
-#' \item FPR
-#' \item FDR
-#' \item FOR
-#' \item TS
-#' \item ACC
-#' \item STP
-#' \item F1
+#'   \item TPR: True Positive Rate
+#'   \item TNR: True Negative Rate
+#'   \item PPV: Positive Predictive Value
+#'   \item NPV: Negative Predictive Value
+#'   \item FNR: False Negative Rate
+#'   \item FPR: False Positive Rate
+#'   \item FDR: False Discovery Rate
+#'   \item FOR: False Omission Rate
+#'   \item TS: Threat Score
+#'   \item ACC: Accuracy
+#'   \item STP: Statistical Parity
+#'   \item F1: F1 Score
 #' }
-#' Performance metrics
+#'
+#' Performance metrics:
 #'
 #' \itemize{
-#' \item recall
-#' \item precision
-#' \item accuracy
-#' \item f1
-#' \item auc
+#'   \item recall: Recall
+#'   \item precision: Precision
+#'   \item accuracy: Accuracy
+#'   \item f1: F1 Score
+#'   \item auc: Area Under the Curve
 #' }
 #'
 #'
@@ -82,13 +83,11 @@
 #'
 #' @return \code{group_metric} object.
 #' It is a list with following items:
-#' \itemize{
 #' \item{group_metric_data}{ - \code{data.frame} containing fairness metric scores for each model}
 #' \item{performance_data}{ - \code{data.frame} containing performance metric scores for each model}
 #' \item{fairness_metric}{ - name of fairness metric}
 #' \item{performance_metric}{ - name of performance metric}
 #'
-#' }
 #'
 #' @export
 #' @rdname group_metric

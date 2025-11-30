@@ -8,13 +8,11 @@
 #'
 #' @return \code{fairness_pca} object
 #' It is list containing following fields:
-#' \itemize{
 #' \item{pc_1_2}{ - amount of data variance explained with each component}
 #' \item{rotation}{ - rotation from \code{stats::prcomp}}
 #' \item{x}{ - x from \code{stats::prcomp}}
 #' \item{sdev}{ - sdev from \code{stats::prcomp}}
 #' \item{label}{ - model labels}
-#' }
 #'
 #' @examples
 #'

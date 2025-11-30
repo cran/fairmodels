@@ -14,10 +14,8 @@ fairness_radar(x, fairness_metrics = c("ACC", "TPR", "PPV", "FPR", "STP"))
 \value{
 \code{fairness_radar} object.
 It is a list containing:
-\itemize{
 \item{radar_data}{ - \code{data.frame} containing scores for each model and parity loss metric}
 \item{label}{ - model labels}
-}
 }
 \description{
 Make \code{fairness_radar} object with chosen \code{fairness_metrics}. Note that there must be at least three metrics that does not contain NA.

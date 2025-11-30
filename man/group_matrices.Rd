@@ -18,15 +18,13 @@ group_matrices(protected, probs, preds, cutoff)
 \value{
 \code{group_matrices} object
 It is a list with values:
+\item{subgroup}{For each subgroup, the following confusion matrix values are included:}
 \itemize{
-For each subgroup:
-\item subgroup
-\itemize{
-\item{tp}{ - number of true positives}
-\item{fp}{ - number of false positives}
-\item{tn}{ - number of true negatives}
-\item{fn}{ - number of false negatives}
-}}
+  \item \strong{tp}: Number of true positives.
+  \item \strong{fp}: Number of false positives.
+  \item \strong{tn}: Number of true negatives.
+  \item \strong{fn}: Number of false negatives.
+}
 }
 \description{
 Calculates confusion matrices for each subgroup

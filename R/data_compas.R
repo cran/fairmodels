@@ -17,6 +17,6 @@
 #' @usage data(compas)
 #' @format A data frame with 6172 rows and 7 variables:
 #'
-#' @source The original source of data is \url{https://www.propublica.org/datastore/dataset/compas-recidivism-risk-score-data-and-analysis}.
+#' @source The original source of data is \url{https://projects.propublica.org/datastore/#compas-recidivism-risk-score-data-and-analysis}.
 #' Modified data used here comes from \url{https://www.kaggle.com/danofer/compass/} (probublicaCompassRecidivism_data_fairml.csv)
 NULL

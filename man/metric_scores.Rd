@@ -14,10 +14,8 @@ metric_scores(x, fairness_metrics = c("ACC", "TPR", "PPV", "FPR", "STP"))
 \value{
 \code{metric_scores} object.
 It is a list containing:
-\itemize{
 \item{metric_scores_data}{ - \code{data.frame} with information about score in particular subgroup, metric, and model}
 \item{privileged}{ - name of privileged subgroup}
-}
 }
 \description{
 Creates \code{metric_scores} object to facilitate visualization. Check how the metric scores differ among models, what is this score, and how it changes

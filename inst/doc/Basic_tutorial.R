@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = FALSE,
   comment = "#>",
@@ -54,7 +54,7 @@ plot_density(fobject)
 ## -----------------------------------------------------------------------------
 plot(metric_scores(fobject))
 
-## ---- results= "hide"---------------------------------------------------------
+## ----results= "hide"----------------------------------------------------------
 library(gbm)
 
 rf_compas_1 <- ranger(Two_yr_Recidivism ~Number_of_Priors+Age_Below_TwentyFive,
